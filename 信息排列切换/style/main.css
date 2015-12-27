@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.box {
+    width: 550px;
+    margin: 20px auto;
+    border: 1px solid #aaa;
+    overflow: hidden;
+}
+
+.box_topBar {
+    width: 523px;
+    height: 40px;
+    margin: 0 auto;
+    clear: both;
+}
+
+.box_topBar span {
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+    margin: 12px 2px;
+}
+
+.box_topBar .left_icon_on {
+    background: url("../images/btns.jpg") -20px -33px no-repeat;
+}
+
+.box_topBar .left_icon_off {
+    background: url("../images/btns.jpg") -37px -32px no-repeat;
+}
+
+.box_topBar .right_icon_on {
+    background: url("../images/btns.jpg") -21px 0 no-repeat;
+}
+
+.box_topBar .right_icon_off {
+    background: url("../images/btns.jpg") -38px 0 no-repeat;
+}
+
+.box_content {
+    overflow: hidden;
+    width: 528px;
+    margin: 0 auto;
+}
+
+.box_content li {
+    width: 164px;
+    list-style: none;
+    margin: 0px 5px 10px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    float: left;
+}
+
+.box_content a, .box_content p {
+    padding-left: 14px;
+}
+
+.box_content li a {
+    display: block;
+}
+
+.box_content li img {
+    height: 164px;
+    width: 164px;
+    display: block;
+    overflow: hidden;
+}
+
+.box_content li button {
+    width: 164px;
+    height: 40px;
+    border: 0px;
+}
+
+.box_content_small a, .box_content_small p {
+    margin-left: 60px;
+    font-size: 12px;
+}
+
+.box_content_small li a {
+    margin-top: 4px;
+}
+
+.box_content_small li img {
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 5px;
+}
+
+.box_content_small li button {
+    height: 20px;
+}

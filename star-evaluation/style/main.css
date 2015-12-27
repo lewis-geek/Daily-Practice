@@ -1,0 +1,22 @@
+/*在这里设置星星的样式*/
+.heart-off, .heart-on, .heart-hover {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/*任意字符都可以*/
+.heart-off:before, .heart-on:before, .heart-hover:before {
+    content: '★';
+}
+
+.heart-off {
+    color: #DFDFDF;
+}
+
+.heart-on {
+    color: #F8800D;
+}
+
+.heart-hover {
+    color: #F8800D;
+}
