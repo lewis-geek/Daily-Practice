@@ -1,0 +1,331 @@
+/*
+    header
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 25px 0;
+    background: #faf8ef;
+    color: #776e65;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 0 auto;
+}
+
+header {
+
+}
+
+header div.top {
+    overflow: hidden;
+    height: 88px;
+}
+
+header div.top h1 {
+    padding: 0;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: bold;
+    margin: 0;
+    display: block;
+    float: left;
+}
+
+header div.top .scores-container {
+    float: right;
+}
+
+header div.top .score-container,
+header div.top .best-container {
+    position: relative;
+    display: inline-block;
+    background: #bbada0;
+    padding: 15px 25px;
+    font-size: 25px;
+    height: 25px;
+    line-height: 47px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-top: 13px;
+    color: white;
+}
+
+.score-container .score-addition {
+    position: absolute;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: rgba(119, 110, 101, 0.9);
+    -webkit-animation: move-up 600ms ease-in forwards;
+    animation: move-up 600ms ease-in forwards;
+}
+
+@-webkit-keyframes move-up {
+    from {
+        top: 25px;
+        opacity: 1;
+    }
+
+    to {
+        top: -30px;
+        opacity: 0;
+    }
+}
+
+@keyframes move-up {
+    from {
+        top: 25px;
+        opacity: 1;
+    }
+    to {
+        top: -30px;
+        opacity: 0;
+    }
+}
+
+header div.top .score-container::after {
+    content: 'SCORE';
+
+}
+
+header div.top .best-container::after {
+    content: "BEST";
+}
+
+header div.top .score-container::after,
+header div.top .best-container::after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da;
+}
+
+header div.bottom {
+    overflow: hidden;
+}
+
+header div.bottom p {
+    float: left;
+    line-height: 40px;
+}
+
+header div.bottom button {
+    float: right;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    border: none;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*
+    content
+*/
+
+.game-content {
+    position: relative;
+    clear: both;
+}
+
+.grid-container {
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    margin: 40px auto 0;
+    padding: 15px;
+    background: #bbada0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.grid-row {
+    overflow: hidden;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.grid-cell {
+    float: left;
+    width: 106px;
+    height: 106px;
+    background: #ccc;
+    border-radius: 3px;
+    background: rgba(238, 228, 218, 0.35);
+    margin-right: 15px;
+}
+
+.grid-cell:last-child {
+    margin-right: 0px;
+}
+
+.number-cell {
+    position: absolute;
+    border-radius: 3px;
+    background: #eee4da;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+    font-size: 55px;
+    line-height: 106px;
+}
+
+/*game-over*/
+
+.game-content .game-information {
+    display: none;
+}
+
+.game-content .game-over {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(238, 228, 218, 0.5);
+    animation: game-over-show 1.8s forwards;
+}
+
+.game-over p {
+    font-size: 60px;
+    line-height: 100%;
+    font-weight: bold;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    margin-top: 212px;
+}
+
+.game-over button {
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    margin-top: 70px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    border: none;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@keyframes game-over-show {
+    0% {
+
+    }
+    20% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .wrapper {
+        width: 320px;
+    }
+
+    .grid-container {
+        width: 320px;
+        height: 320px;
+        padding: 8px;
+    }
+
+    header div.top {
+        height: 68px;
+    }
+
+    header div.top h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    header div.top .score-container,
+    header div.top .best-container {
+        font-size: 18px;
+        margin-top: 8px;
+        padding: 6px 18px;
+        line-height: 38px;
+    }
+
+    header div.top .score-container::after,
+    header div.top .best-container::after {
+        top: 5px;
+        left: 0;
+        font-size: 10px;
+        line-height: 10px;
+        text-align: center;
+        color: #eee4da;
+    }
+
+    header div.bottom p {
+        width: 55%;
+        font-size: 16px;
+        line-height: normal;
+    }
+
+    header div.bottom button {
+        font-size: 14px;
+        padding: 0 17px;
+        height: 37px;
+    }
+
+    .grid-row {
+        margin-bottom: 8px;
+    }
+
+    .grid-cell {
+        width: 70px;
+        height: 70px;
+        margin-right: 8px;
+    }
+
+    .number-cell {
+        font-size: 35px;
+        line-height: 70px;
+    }
+
+    .game-over p {
+        font-size: 38px;
+        margin-top: 135px;
+    }
+
+    .game-over button {
+        font-size: 14px;
+        padding: 0 17px;
+        height: 37px;
+        margin-top: 45px;
+    }
+
+    .score-container .score-addition {
+        font-size: 16px;
+        line-height: 16px;
+    }
+}
+
+
+
+
+

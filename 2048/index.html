@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2048</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-2.2.0.min.js"></script>
+    <script src="js.cookie.js"></script>
+    <script src="support.js"></script>
+    <script src="animation.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="top">
+            <h1>2048</h1>
+            <div class="scores-container">
+                <div class="score-container">
+                    <span>0</span>
+                </div>
+                <div class="best-container">
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>Join the numbers and get to the <strong>2048 tile!</strong></p>
+            <button id="rest-button" onclick="newGame()">New Game</button>
+        </div>
+    </header>
+    <div class="game-content">
+        <div class="game-information">
+            <p>Game over!</p>
+            <button id="retry-button" onclick="tryagain()">Try again</button>
+        </div>
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
