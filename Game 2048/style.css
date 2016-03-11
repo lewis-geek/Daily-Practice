@@ -130,6 +130,7 @@ header div.bottom button {
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
+    line-height: 40px;
     border: none;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
@@ -223,6 +224,7 @@ header div.bottom button {
     text-decoration: none;
     color: #f9f6f2;
     height: 40px;
+    line-height: 40px;
     border: none;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
@@ -290,6 +292,7 @@ header div.bottom button {
         font-size: 14px;
         padding: 0 17px;
         height: 37px;
+        line-height: 37px;
     }
 
     .grid-row {
@@ -316,6 +319,7 @@ header div.bottom button {
         font-size: 14px;
         padding: 0 17px;
         height: 37px;
+        line-height: 37px;
         margin-top: 45px;
     }
 
@@ -324,8 +328,3 @@ header div.bottom button {
         line-height: 16px;
     }
 }
-
-
-
-
-
