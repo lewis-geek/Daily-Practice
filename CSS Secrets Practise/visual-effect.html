@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>visual effect</title>
+  <style>
+    body {
+      text-align: center;
+      background: #58a;
+      background-image:
+      linear-gradient(white 2px, transparent 0),
+      linear-gradient(90deg, white 2px, transparent 0),
+      linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+      linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+      background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+      background-position: 5px;
+    }
+
+    div, img, main{
+      width: 50vw;
+      height: 200px;
+      margin: 0 auto 20px;
+      object-fit: cover;
+    }
+
+    #test {
+      background-color: lightblue;
+      box-shadow: 0 0 10px;
+    }
+
+    #shadow-one-side {
+      background-color: yellowgreen;
+      box-shadow: 0 5px 4px -4px black;
+    }
+
+    #shadow-2-sides {
+      background-color: khaki;
+      box-shadow: 3px 3px 6px -3px black;
+    }
+
+    #shaow-opposite-sides {
+      background-color: lavenderblush;
+      box-shadow: 5px 0 5px -5px black,
+                 -5px 0 5px -5px black;
+    }
+
+    #color-tint-filter {
+      transition: 1s filter;
+      filter: sepia(1) saturate(4) hue-rotate(295deg);
+    }
+
+    #color-tint-filter:hover, #color-tint-filter:focus {
+      filter: none;
+    }
+
+    main {
+      position: relative;
+      height: auto;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    main::before {
+      position: absolute;
+      z-index: -1;
+      top: 0; right: 0; bottom: 0; left: 0;
+      content: '';
+      background: hsla(0, 0%, 100%, 0.3);
+      filter: blur(20px);
+      margin: -30px;
+    }
+
+    #folded-corner {
+      background: #58a;
+      background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, .4) 0) no-repeat 100% 0 / 2em 2em,
+                  linear-gradient(-135deg, transparent 1.5em, #58a 0);
+    }
+  </style>
+</head>
+<body>
+<div id="test"></div>
+<div id="shadow-one-side"></div>
+<div id="shadow-2-sides"></div>
+<div id="shaow-opposite-sides"></div>
+<img id="color-tint-filter" src="./img/12496254,2560,1600.jpg" alt="pic">
+<main>
+  <blockquote>“The only way to get rid of a temptation is to yield to it. Resist it, and your soul grows sick with longing for the things it has forbidden to itself, with desire for what its monstrous laws have made monstrous and unlawful.”</em>
+    <footer>— <cite>Oscar Wilde, The Picture of Dorian Gray</cite></footer>
+  </blockquote>
+</main>
+<div id="folded-corner"></div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>形状</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: url('./img/55781185_p0.png') no-repeat;
+      background-position: center top;
+      background-size: cover;
+      text-align: center;
+    }
+
+    .ellipse{
+      margin: 0 auto;
+      width: 50%;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    #ellipse {
+      border-radius: 50%;
+      background-color: #FEEDC8;
+    }
+
+    #half-ellipse {
+      border-radius: 50% / 100% 100% 0 0;
+      background-color: #4D4C62;
+    }
+
+    #half-ellipse-2 {
+      border-radius: 100% 0 0 100% / 50%;
+      background-color: #F5E67E;
+    }
+
+    #quarter-ellipse {
+      border-radius: 100% 0 0 0;
+      background-color: #1A2265;
+    }
+
+    #parallelograms-pseudo {
+      position: relative;
+      text-align: center;
+      line-height: 100px;
+      font-size: 3em;
+      color: white;
+    }
+
+    #parallelograms-pseudo::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: -1;
+      background: #58a;
+      transform: skew(45deg);
+    }
+
+    .diamond {
+      width: 25vw;
+      height: 25vw;
+      margin: 0 auto;
+    }
+
+    #diamond-images {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      transform: rotate(45deg);
+      overflow: hidden;
+    }
+
+    #diamond-images > img {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-45deg) scale(1.42);
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    #diamond-clip {
+      display: none;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+      transition: 1s clip-path;
+    }
+
+    #diamond-clip:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    #bevel-corners-gradients {
+      width: 50%;
+      height: 100px;
+      margin: 0 auto;
+      background: #58a;
+      background: linear-gradient(135deg, transparent 15px, #58a 0),
+                  linear-gradient(-135deg, transparent 15px, #58a 0),
+                  linear-gradient(-45deg, transparent 15px, #58a 0),
+                  linear-gradient(45deg, transparent 15px, #665 0);
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: left top, right top, right bottom, left bottom;
+      margin-bottom: 10px;
+    }
+
+    #scoop-corners {
+      width: 50%;
+      height: 100px;
+      margin: 0 auto;
+      background: #58a;
+      background:
+                  radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+                  radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+                  radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+                  radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    #rapezoid-tabs {
+      display: inline-block;
+      height: 100px;
+      padding: .5em 1em .35em;
+      position: relative;
+      color: white;
+      font-size: 3em;
+      line-height: 125px;
+    }
+
+    #rapezoid-tabs::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      background: #58a;
+      background-image: linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,0)); border: 1px solid rgba(0,0,0,.4);
+      border-bottom: none;
+      border-radius: .5em .5em 0 0;
+      box-shadow: 0 .15em white inset;
+      transform: scale(1.3) perspective(.5em) rotateX(5deg);
+      transform-origin: bottom;
+    }
+
+    #pie{
+      width: 100px;
+      height: 100px;
+      margin: 10px auto 0;
+      border-radius: 50%;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, #5B5B4B 0);
+    }
+
+    #pie::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      background-color: inherit;
+      transform-origin: 0 50%; /*left*/
+      border-radius: 0 100% 100% 0 / 50%;
+      animation: spin 3s linear infinite,
+                 bg 6s step-end infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(.5turn); }
+    }
+
+    @keyframes bg {
+      50% { background: #5B5B4B; }
+    }
+
+    .pie-static{
+      position: relative;
+      width: 100px;
+      line-height: 100px;
+      border-radius: 50%;
+      margin: 10px auto 0;
+      background: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, #5B5B4B 0);
+      color: transparent;
+      text-align: center;
+    }
+
+    .pie-static::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      width: 50%; height: 100%;
+      border-radius: 0 100% 100% 0 / 50%;
+      background-color: inherit;
+      transform-origin: left;
+      animation: spin 50s linear infinite,
+                 bg 100s step-end infinite;
+      animation-play-state: paused;
+      animation-delay: inherit;
+    }
+  </style>
+</head>
+<body>
+<div id="ellipse" class="ellipse"></div>
+<div id="half-ellipse" class="ellipse"></div>
+<div id="half-ellipse-2" class="ellipse"></div>
+<div id="quarter-ellipse" class="ellipse"></div>
+<div id="parallelograms-pseudo" class="ellipse">click me</div>
+<div id="diamond-images" class="diamond">
+  <img src="./img/55306397_p7_master1200.jpg" alt="pic">
+</div>
+<img src="./img/55306397_p7_master1200.jpg" alt="pic" id="diamond-clip">
+<div id="bevel-corners-gradients"></div>
+<div id="scoop-corners"></div>
+<div id="rapezoid-tabs">lewis</div>
+<div id="pie"></div>
+<div class="pie-static">30%</div>
+<div class="pie-static">60%</div>
+<script type="text/javascript">
+  var pieList = document.querySelectorAll('.pie-static')
+  for (i = 0; i < pieList.length; i++) {
+    var p = parseFloat(pieList[i].textContent)
+    pieList[i].style.animationDelay = '-' + p + 's';
+  }
+</script>
+</body>
+</html>

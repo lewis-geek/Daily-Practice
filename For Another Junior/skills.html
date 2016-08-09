@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>hello :)</title>
+    <link rel="stylesheet" href="./style/main.css">
+    <style media="screen">
+    header {
+        background: #2c58ed;
+        background-origin: border-box;
+    }
+
+    header ul a {
+        color: #fff;
+        font-weight: bolder;
+    }
+
+    footer {
+        background: #2c58ed;
+    }
+
+    footer section {
+        color: #fff;
+        font-weight: bolder;
+    }
+
+    main article.container {
+        padding: 5vh 5vh 10vh;
+    }
+
+    .contact-info {
+        text-align: center;
+        margin-bottom: 5vh;
+    }
+
+    .contact-info h2{
+        display: inline-block;
+        font-weight: 900;
+        color: #595959;
+        font-size: 2.3em;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 0 0 0.4em;
+        position: relative;
+    }
+
+    .contact-info h2::after {
+        content: ' ';
+        height: 5px;
+        width: 60%;
+        text-align: center;
+        position: absolute;
+        background-color: #E7E7E7;
+        left: 50%;
+        bottom: 0;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+    }
+
+    section.skills-chart {
+        margin-bottom: 10px;
+    }
+
+    section.skills-chart:last-child {
+        margin-bottom: 0;
+    }
+
+    section.skills-chart h2{
+        padding-bottom: 9px;
+        font-size: 1.2em;
+        font-weight: normal;
+        color: #000;
+    }
+
+    section.skills-chart div {
+        height: 30px;
+        background-image: -webkit-linear-gradient(left,#264EEA 30%, #F0EFEF 0);
+        background-image: linear-gradient(to right,#264EEA 30%, #F0EFEF 0);
+    }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <article class="container">
+        <section class="contact-info">
+            <h2>SKILLS</h2>
+        </section>
+        <section class="skills-chart">
+            <h2>Lorem</h2>
+            <div></div>
+        </section>
+        <section class="skills-chart">
+            <h2>Lorem</h2>
+            <div></div>
+        </section>
+        <section class="skills-chart">
+            <h2>Lorem</h2>
+            <div></div>
+        </section>
+        <section class="skills-chart">
+            <h2>Lorem</h2>
+            <div></div>
+        </section>
+        <section class="skills-chart">
+            <h2>Lorem</h2>
+            <div></div>
+        </section>
+    </article>
+</main>
+<footer>
+    <section>
+        Copyright © 2015.Your name All rights reserved.
+    </section>
+</footer>
+</body>
+</html>

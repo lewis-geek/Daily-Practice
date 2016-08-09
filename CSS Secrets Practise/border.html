@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框样式</title>
+<style media="screen">
+    body {
+        background: url('img/55781185_p0.png') no-repeat;
+        background-size: cover;
+    }
+
+    div {
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        top: 150px;
+    }
+
+    div#transparent-border {
+        border: 10px solid hsla(0, 0%, 100%,.5);
+        background: white;
+        background-clip: padding-box;
+    }
+
+    div#multiple-border-boxshaow {
+        background: yellow;
+        box-shadow:  0 0 0 10px #655,0 0 0 15px deeppink,0 2px 5px 15px rgba(0, 0, 0, .6);
+        margin: 20px 15px 0;
+    }
+
+    div#multiple-border-outline {
+        background: yellowgreen;
+        border: 10px solid #655;
+        outline: 5px solid deeppink;
+        margin: 25px 5px 0;
+    }
+
+    div#multiple-border-hem {
+        background: #655;
+        border: 10px solid #655;
+        outline: 1px dashed #ccc;
+        outline-offset: -10px;
+        border-radius: 5px;
+        margin: 10px 0px 0;
+    }
+
+    div#multiple-borderinner-rounding {
+        background: tan;
+        border-radius: 5px;
+        outline: 10px solid #665;
+        box-shadow: 0 0 0 5px #665;
+        margin: 15px 10px 0;
+    }
+</style>
+</head>
+<body>
+<div id="transparent-border">
+    transparent-border
+</div>
+<div class="multiple-border" id="multiple-border-boxshaow">
+    multiple-border-boxshaow
+</div>
+<div class="multiple-border" id="multiple-border-outline">
+    multiple-border-outline
+</div>
+<div class="multiple-border" id="multiple-border-hem">
+    multiple-border-hem
+</div>
+<div class="multiple-border" id="multiple-borderinner-rounding">
+    multiple-borderinner-rounding
+</div>
+</body>
+</html>

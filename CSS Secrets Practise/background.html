@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景样式</title>
+<style media="screen">
+    body {
+        background: url('img/55306397_p7_master1200.jpg') no-repeat;
+        background-size: cover;
+        background-position: top center;
+    }
+
+    div {
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: .93;
+        max-width: 30em;
+        min-height: 10em;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    div#extended-bg-position {
+        background: url('http://csssecrets.io/images/code-pirate.svg') no-repeat bottom right #58a;
+        background-position: right 10px bottom 10px;
+        padding: 10px;
+        margin-top: 0;
+    }
+
+    div#background-origin {
+        background: url('http://csssecrets.io/images/code-pirate.svg') no-repeat #58a bottom right;
+        background-origin: content-box;
+    }
+
+    div#background-calc {
+        background: url('http://csssecrets.io/images/code-pirate.svg') no-repeat #58a bottom right;
+        background-position: calc(100% - 10px) calc(100% - 10px);
+    }
+
+    div#horizontal-stripes {
+        background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
+        background-size: 100% 30px;
+    }
+
+    div#vertical-stripes {
+        background: linear-gradient(to right, #fb3 30%, #58a 0);
+        background-size: 30px 100%;
+    }
+
+    div#diagonal-stripes {
+        background: repeating-linear-gradient(45deg, #fb3, #fb3 15px, #58a 0, #58a 30px);
+        margin-top: 10px;
+    }
+
+    div#grid {
+        background: white;
+        background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 0),
+        linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
+        background-size: 30px 30px;
+    }
+
+    div#blueprint {
+        background: #58a;
+        background-image:
+        linear-gradient(white 2px, transparent 0),
+        linear-gradient(90deg, white 2px, transparent 0),
+        linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
+        linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
+        background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px
+    }
+
+    div#polka {
+        background: #655;
+        background-image:
+        radial-gradient(tan 30%, transparent 0),
+        radial-gradient(tan 30%, transparent 0);
+        background-size: 30px  30px;
+        background-position: 0 0, 15px 15px;
+    }
+
+    div#checkerboard {
+        background: #eee;
+        background-image:
+        linear-gradient(45deg, #bbb 25%, transparent 0),
+        linear-gradient(45deg, transparent 75%, #bbb 0),
+        linear-gradient(45deg, #bbb 25%, transparent 0),
+        linear-gradient(45deg, transparent 75%, #bbb 0);
+        background-position: 0 0, 15px 15px, 15px 15px ,30px 30px;
+        background-size: 30px 30px;
+    }
+
+    div#checkerboard-compare {
+        background: #eee;
+        background-image:
+        linear-gradient(45deg, red 25%, transparent 0),
+        linear-gradient(45deg, transparent 75%, yellow 0),
+        linear-gradient(45deg, blue 25%, transparent 0),
+        linear-gradient(45deg, transparent 75%, #bbb 0);
+        background-position: 0 0, 15px 15px, 15px 15px ,30px 30px;
+        background-size: 30px 30px;
+    }
+
+    div#cicada-stripes {
+        background: hsl(20, 40%, 90%);
+        background-image:
+        linear-gradient(90deg, #fb3 11px, transparent 0),
+        linear-gradient(90deg, #ab4 23px, transparent 0),
+        linear-gradient(90deg, #665 41px, transparent 0);
+        background-size: 41px 100%, 61px 100%, 83px 100%;
+    }
+
+    div#continuous-image-borders {
+        /*padding: 1em;*/
+        border: 1em solid transparent;
+        background:
+        linear-gradient(white, white),
+        url('img/stone-art.jpeg');
+        background-size: cover;
+        background-clip: padding-box, border-box;
+        background-origin: border-box;
+        box-sizing: border-box;
+        max-width: calc(30em + 20px);
+        min-height: calc(10em + 20px);
+    }
+
+    div#vintage-envelope {
+        padding: 1em;
+        border: 1em solid transparent;
+        background:
+        linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0 / 5em 5em;
+        box-sizing: border-box;
+        max-width: calc(30em + 20px);
+        min-height: calc(10em + 20px);
+    }
+
+    @keyframes ants { to { background-position: 100%} }
+
+    div#marching-ants {
+        padding: 1em;
+        border: 1px solid transparent;
+        background: linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%) 0 / .6em .6em;
+        animation: ants 50s linear infinite;
+        box-sizing: border-box;
+        max-width: calc(30em + 20px);
+        min-height: calc(10em + 20px);
+    }
+
+</style>
+</head>
+<body>
+<div id="extended-bg-position">
+    extended-bg-position
+</div>
+<div id="background-origin">
+    background-origin
+</div>
+<div id="background-calc">
+    background-calc
+</div>
+<div id="horizontal-stripes">
+    horizontal-stripes
+</div>
+<div id="vertical-stripes">
+    vertical-stripes
+</div>
+<div id="diagonal-stripes">
+    diagonal-stripes
+</div>
+<div id="grid">
+    grid
+</div>
+<div id="blueprint">
+    blueprint
+</div>
+<div id="polka">
+    polka
+</div>
+<div id="checkerboard">
+    checkerboard
+</div>
+<div id="checkerboard-compare">
+    checkerboard-compare
+</div>
+<div id="cicada-stripes">
+    cicada-stripes
+</div>
+<div id="continuous-image-borders">
+    continuous-image-borders
+</div>
+<div id="vintage-envelope">
+    vintage-envelope
+</div>
+<div id="marching-ants">
+    marching-ants
+</div>
+</body>
+</html>
