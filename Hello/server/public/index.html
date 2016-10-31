@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>506有人没</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
+    }
+
+    #btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 100px;
+      height: 100px;
+
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      transition: all .3s;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      color: #fff;
+      border-radius: 50%;
+      outline: 0;
+      background-color: #fff;
+
+      line-height: 100px;
+
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    #btn.true {
+      background-color: #67D5B5;
+      box-shadow: 0px 0px 10px 4px RGBA(108, 212, 181, 0.2);
+    }
+
+    #btn.true::after {
+      content: '有人';
+    }
+
+    #btn.false {
+      background-color: #E53A40;
+      box-shadow: 0px 0px 10px 4px RGBA(227, 60, 69, 0.2);
+    }
+
+    #btn.false::after {
+      content: '没人';
+    }
+  </style>
+</head>
+<body>
+  <div id="btn"></div>
+<script type="text/javascript">
+  var btn = document.querySelector('div')
+  var text = document.querySelector('span')
+  var locState = false
+
+  window.onload = function() {
+    getJSON("/anybodyhere").then(function(state) {
+      locState = state
+      btn.className = locState
+    }, function(error) {
+      alert('出错了')
+    });
+  }
+
+  btn.addEventListener('click', btnHandle)
+
+  document.addEventListener('keyup', function(e) {
+    if (e.which == 32) {
+      btnHandle()
+    }
+  })
+
+  function btnHandle() {
+    var req = '/changestate?state=' + locState
+    getJSON(req).then(function(state) {
+      locState = state
+      btn.className = state
+    }, function(error) {
+      alert('出错了')
+    });
+  }
+
+  function getJSON(url) {
+    var promise = new Promise(function(resolve, reject){
+      var client = new XMLHttpRequest();
+      client.open("GET", url);
+      client.onreadystatechange = handler;
+      client.responseType = "json";
+      client.setRequestHeader("Accept", "application/json");
+      client.send();
+
+      function handler() {
+        if (this.readyState !== 4) {
+          return;
+        }
+        if (this.status === 200) {
+          resolve(this.response);
+        } else {
+          reject(new Error(this.statusText));
+        }
+      };
+    });
+      return promise;
+  }
+</script>
+</body>
+</html>
