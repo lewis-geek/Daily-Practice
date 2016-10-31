@@ -1,8 +1,5 @@
-
-信息排列切换/.idea
-
-fullPage/.idea
-
-Focus map Carousel/.idea
-
-.idea
+dist/
+.idea/
+.DS_Store
+node_modules
+npm-debug.log
