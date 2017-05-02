@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>登录</title>
+  <style>
+    .login-container {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .login-container input {
+      width: 98%;
+    }
+
+    .login-container fieldset {
+      /*padding: 20px 20px;*/
+    }
+
+    input[type='button'] {
+      border: none;
+      margin: 15px 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <form action="">
+      <fieldset>
+        <legend>登录</legend>
+        <div class="account">
+          <label for="account">账号</label>
+          <input id='account' type="text" name="" value="">
+        </div>
+        <div class="password">
+          <label for="password">密码</label>
+          <input id='password' type="password" name="" value="">
+        </div>
+        <input type="button" name="" value="确认">
+      </fieldset>
+    </form>
+  </div>
+<script type="text/javascript">
+  var submitButton = document.querySelector("input[type='button']")
+
+  submitButton.addEventListener('click', handleSubmit)
+
+  function handleSubmit() {
+    var accountInput = document.querySelector('#account')
+    var passwordInput = document.querySelector('#password')
+
+    var account = accountInput.value
+    var password = passwordInput.value
+
+    if (account == 'admin' && password == 'adminqaz') {
+      location.assign('./remote.html')
+    } else {
+      alert('账号密码错误');
+    }
+  }
+</script>
+</body>
+</html>

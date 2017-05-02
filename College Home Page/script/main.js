@@ -22,7 +22,17 @@ window.onload = function() {
 
   function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+  var divs = document.querySelectorAll('.remote-function > div')
 
+  Array.prototype.slice.call(divs)
+
+  divs.forEach(function(div) {
+    div.addEventListener('click',handleRemote)
+  })
+
+  function handleRemote() {
+    location.assign('./login.html')
+  }
 
   // [].concat(_toConsumableArray(nodelis)).forEach(function (elem, index) {
   //   elem.addEventListener('mouseenter', function () {
