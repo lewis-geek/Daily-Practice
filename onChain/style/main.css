@@ -60,10 +60,6 @@ header h1 {
   border-collapse: collapse;
 }
 
-/*.analysis-rules table td:last-child {
-  text-align: right;
-}*/
-
 .analysis-rules table tr {
   border-bottom: 1px solid #ccc;
 }
@@ -85,10 +81,6 @@ header h1 {
 .personal-data h3 {
   font-size: 1em;
   font-weight: 400;
-}
-
-.personal-data .chart-container {
-
 }
 
 .under-pd {
