@@ -25,7 +25,7 @@ body {
 }
 
 header {
-  background: url('../img/back1.png');
+  background: url('http://opb5cij9v.bkt.clouddn.com/back1.png');
 }
 
 header a {
@@ -170,7 +170,8 @@ header a {
 
 .rolling-contain {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-
+  height: 268px;
+  overflow: hidden;
 }
 
 .rolling > div img {

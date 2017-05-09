@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px 10px 0;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.personal-info  .info-container + .info-container {
+  margin-top: 20px;
+}
+
+.info-container .info-item {
+  padding: 2px 0;
+}
+
+.info-container .info-item em {
+  font-style: normal;
+  font-weight: 400
+}
+
+.button {
+  display: inline-block;
+  background-color: #00C3EE;
+  color: #fff;
+  padding: 0px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.info-container .info-item .check-button {
+  float: right;
+}
+
+.analysis-rules {
+  margin-top: 40px;
+}
+
+.analysis-rules table caption{
+  text-align: left;
+  font-weight: 400;
+}
+
+.analysis-rules table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/*.analysis-rules table td:last-child {
+  text-align: right;
+}*/
+
+.analysis-rules table tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.analysis-rules table th {
+  text-align: left;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+.analysis-rules table td {
+  padding: 10px 0;
+}
+
+.personal-data {
+  margin-top: 40px;
+}
+
+.personal-data h3 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.personal-data .chart-container {
+
+}
+
+.under-pd {
+  margin-top: 40px;
+}
+
+.under-pd .info-item:last-child{
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 80px;
+}
